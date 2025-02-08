@@ -6,10 +6,10 @@ const Footer = () => {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h2 className="text-2xl font-bold">GUDSKY</h2>
+            <h2 className="text-2xl font-bold">@GUDSKY</h2>
             <p className="mt-4 text-sm">
-              Empowering the next generation of AI professionals through expert-led education and
-              practical training.
+              Let’s become a leading platform for fostering young talent in research, innovation, and academic excellence, 
+              and to make significant contributions to global knowledge and development.
             </p>
           </div>
           <div>
@@ -40,9 +40,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold">Contact</h3>
             <ul className="mt-4 space-y-2">
-              <li className="text-sm">Email: info@gudsky.com</li>
-              <li className="text-sm">Phone: (555) 123-4567</li>
-              <li className="text-sm">Address: 123 AI Street, Tech City</li>
+              <li className="text-sm">Email: support.research@gudsky.org</li>
+              <li className="text-sm">Phone: (+91) 8018640398</li>
+              <li className="text-sm">Phone: (+91) 9305641151</li>
+              <li className="text-sm">Address: 1/11, Anandnagar, Vidyasagar pally, Bhattanagar, Liluah, Howrah - 711203</li>
             </ul>
           </div>
           <div>
@@ -57,7 +58,7 @@ const Footer = () => {
               <a href="#" className="hover:text-gray-300">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="hover:text-gray-300">
+              <a href="https://www.linkedin.com/company/gudsky/" className="hover:text-gray-300">
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>

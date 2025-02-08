@@ -2,21 +2,21 @@ import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Sarah Johnson",
+    name: "Sarah Kaur",
     role: "PhD Student",
     content:
       "GUDSKY's research guidance transformed my academic journey. The mentorship and resources were invaluable.",
     rating: 5,
   },
   {
-    name: "Michael Chen",
+    name: "B.P.S Kar",
     role: "Graduate Researcher",
     content:
       "Excellent support system and research tools. I accomplished more in months than I did in years of self-guided research.",
     rating: 5,
   },
   {
-    name: "Emily Rodriguez",
+    name: "Anubhab Mohanty",
     role: "Undergraduate Student",
     content:
       "The community support and expert guidance made my research project much more manageable and successful.",

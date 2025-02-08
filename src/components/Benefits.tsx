@@ -2,7 +2,7 @@ import { CheckCircle } from "lucide-react";
 
 const benefits = [
   {
-    title: "Expert Research Guidance",
+    title: "AI Based Research Opportunity ",
     description: "Get mentored by experienced researchers and academics",
   },
   {
@@ -21,11 +21,14 @@ const benefits = [
 
 const Benefits = () => {
   return (
+    
     <div className="bg-white py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Why Choose GUDSKY?
+          Learn and
+Teach
+Bashed Learning Platform 
           </h2>
           <p className="mt-4 text-lg text-gray-500">
             We provide comprehensive research support with practical guidance
@@ -50,6 +53,7 @@ const Benefits = () => {
       </div>
     </div>
   );
+  
 };
 
 export default Benefits;
