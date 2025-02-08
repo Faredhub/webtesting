@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogTitle, DialogContent, DialogActions } from "@material-ui/core";
+import { Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material"; // Updated import
 
 const ContactUs = () => {
   const [name, setName] = useState('');
