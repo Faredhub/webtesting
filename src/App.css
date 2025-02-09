@@ -1,42 +1,120 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
+/* Card with Gradient Background and Neon Glow Effect */
 .card {
+  position: relative;
   padding: 2em;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(45deg, #ff6f61, #fb923c, #ff3b2f, #ff6f61);
+  background-size: 400% 400%;
+  animation: gradient-card 8s ease infinite;
+}
+
+/* Neon Light Moving Around the Card */
+.animate-neon-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff6f61, #fb923c, #ff3b2f, #ff6f61);
+  background-size: 400% 400%;
+  animation: neon-glow 3s linear infinite;
+  box-shadow: 0 0 20px #ff6f61, 0 0 30px #fb923c, 0 0 50px #ff3b2f;
+}
+
+/* Moving gradient animation */
+@keyframes gradient-card {
+  0% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Neon light glow animation */
+@keyframes neon-glow {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Gradient animation for the moving border */
+@keyframes gradient-border {
+  0% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Button styles and animations */
+button {
+  background-color: #ff6f61;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 0.8em 1.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #ff3b2f;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Copy button animation effect */
+button.clicked {
+  transform: scale(0.95);
+  background-color: #fb923c;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+/* Utility classes for layout and spacing */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-link {
+  text-decoration: none;
+  color: #ff6f61;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.text-link:hover {
+  color: #ff3b2f;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  .card {
+    padding: 1.5em;
+  }
 }
