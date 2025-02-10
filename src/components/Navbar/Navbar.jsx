@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
-import { FaBars, FaTimes } from "react-icons/fa"; // Icons for the hamburger menu
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-gray-800 text-white p-4">
+    <nav className="w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white p-4">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <img src={logo} alt="Company Logo" className="h-10" />
@@ -21,25 +21,41 @@ const Navbar = () => {
 
         {/* Menu for larger screens */}
         <ul className="hidden md:flex space-x-6">
-          <li className="cursor-pointer hover:text-gray-400">Home</li>
-          <li className="cursor-pointer hover:text-gray-400">Program</li>
-          <li className="cursor-pointer hover:text-gray-400">About Us</li>
-          <li className="cursor-pointer hover:text-gray-400">Campus</li>
-          <li className="cursor-pointer hover:text-gray-400">Testimonials</li>
-          <li className="cursor-pointer hover:text-gray-400">Contact Us</li>
+          {["Home", "Program", "About Us", "Campus", "Testimonials", "Contact Us"].map(
+            (item, index) => (
+              <li
+                key={index}
+                className="cursor-pointer hover:text-gray-400 transition duration-300"
+              >
+                {item}
+              </li>
+            )
+          )}
         </ul>
       </div>
 
       {/* Dropdown Menu for smaller screens */}
       {isOpen && (
-        <ul className="mt-4 space-y-4 md:hidden">
-          <li className="cursor-pointer hover:text-gray-400">Home</li>
-          <li className="cursor-pointer hover:text-gray-400">Program</li>
-          <li className="cursor-pointer hover:text-gray-400">About Us</li>
-          <li className="cursor-pointer hover:text-gray-400">Campus</li>
-          <li className="cursor-pointer hover:text-gray-400">Testimonials</li>
-          <li className="cursor-pointer hover:text-gray-400">Contact Us</li>
-        </ul>
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-black/70 backdrop-blur-md flex justify-center items-center z-50"
+          onClick={() => setIsOpen(false)}
+        >
+          <ul
+            className="text-center space-y-6 text-xl bg-gradient-to-b from-gray-900 to-gray-700 p-8 rounded-md animate-slide-down"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {["Home", "Program", "About Us", "Campus", "Testimonials", "Contact Us"].map(
+              (item, index) => (
+                <li
+                  key={index}
+                  className="cursor-pointer text-white hover:text-cyan-400 transition duration-300"
+                >
+                  {item}
+                </li>
+              )
+            )}
+          </ul>
+        </div>
       )}
     </nav>
   );
