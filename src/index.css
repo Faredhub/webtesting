@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+  /* Neon Button Glow Effect */
+.neon-button {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  
+  .neon-glow {
+    background: linear-gradient(45deg, orange, pink, blue, cyan);
+    opacity: 0;
+    filter: blur(15px);
+    transition: opacity 0.7s ease-in-out;
+  }
+  
+  .neon-button:hover .neon-glow {
+    opacity: 0.7;
+  }
+  
