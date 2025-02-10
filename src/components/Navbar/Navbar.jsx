@@ -21,7 +21,7 @@ const Navbar = () => {
 
         {/* Menu for larger screens */}
         <ul className="hidden md:flex space-x-6">
-          {["Home", "Program", "About Us", "Campus", "Testimonials", "Contact Us"].map(
+          {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
             (item, index) => (
               <li
                 key={index}
@@ -31,6 +31,14 @@ const Navbar = () => {
               </li>
             )
           )}
+          {/* Contact Us Button */}
+          <li>
+            <button
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold hover:from-cyan-600 hover:to-blue-600 transition duration-300"
+            >
+              Contact Us
+            </button>
+          </li>
         </ul>
       </div>
 
@@ -44,7 +52,7 @@ const Navbar = () => {
             className="text-center space-y-6 text-xl bg-gradient-to-b from-gray-900 to-gray-700 p-8 rounded-md animate-slide-down"
             onClick={(e) => e.stopPropagation()}
           >
-            {["Home", "Program", "About Us", "Campus", "Testimonials", "Contact Us"].map(
+            {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
               (item, index) => (
                 <li
                   key={index}
@@ -54,6 +62,14 @@ const Navbar = () => {
                 </li>
               )
             )}
+            {/* Contact Us Button in dropdown */}
+            <li>
+              <button
+                className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold hover:from-cyan-600 hover:to-blue-600 transition duration-300"
+              >
+                Contact Us
+              </button>
+            </li>
           </ul>
         </div>
       )}
