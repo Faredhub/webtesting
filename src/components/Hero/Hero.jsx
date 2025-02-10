@@ -26,7 +26,7 @@ const Hero = () => {
 
         {/* Get Started Button with Gradient & Hover Effect */}
         <div className="flex justify-center mt-6"> {/* Center the button */}
-          <button className="px-8 py-3 text-lg font-semibold bg-gradient-to-r from-cyan-400 to-pink-500 text-white rounded-full hover:from-cyan-500 hover:to-pink-600 transform hover:scale-105 transition duration-300 ease-in-out shadow-lg flex items-center justify-center gap-2">
+          <button className="px-8 py-3 text-lg font-semibold bg-gradient-to-r from-orange-500 to-blue-900 text-white rounded-full hover:from-orange-600 hover:to-blue-950 transform hover:scale-105 transition duration-300 ease-in-out shadow-lg flex items-center justify-center gap-2">
             Explore More
             {/* Arrow Image inside the button */}
             <img
