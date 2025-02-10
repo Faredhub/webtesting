@@ -1,19 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import BackgroundChanger from "./components/BackgroundChanger";
-import PasswordGenerator from "./components/PasswordGenerator";
+import React from 'react'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<BackgroundChanger />} />
-          <Route path="/password-generator" element={<PasswordGenerator />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+    <div>
+        <Navbar/>
+    </div>
+  )
 }
 
-
-export default App;
+export default App
