@@ -22,4 +22,59 @@
   .neon-button:hover .neon-glow {
     opacity: 0.7;
   }
-  
+  /* Intense white glow effect */
+.glow-text {
+  text-shadow: 0 0 8px white, 0 0 12px white, 0 0 16px cyan;
+}
+/* Initial white glow effect */
+.glow-text {
+  text-shadow: 0 0 8px rgb(255, 252, 252), 0 0 12px white, 0 0 16px cyan;
+  position: relative;
+}
+
+.glow-hover {
+  text-shadow: 0 0 4px rgb(65, 8, 8), 0 0 6px rgb(8, 43, 43); /* 50% less intense glow */
+}
+
+.hover-effect::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+li:hover .hover-effect::before {
+  opacity: 1;
+}
+/* Clean hover effect with curved box */
+.hover-effect::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+li:hover .hover-effect::before {
+  opacity: 1;
+}
+/* Neon hover effect */
+.neon-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px red, 0 0 30px red, 0 0 45px red;
+}

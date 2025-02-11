@@ -3,6 +3,8 @@ import './index.css'; // Importing global styles
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import Program from './components/Programs/Program';
+import About from './components/About/About';
+import Campus from './components/Campus/Campus';
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Navbar />
       <Hero />
       <Program />
+      <About/>
+      <Campus/>
     </div>
   );
 }
