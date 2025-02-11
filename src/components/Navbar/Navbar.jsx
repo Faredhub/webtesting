@@ -40,12 +40,14 @@ const Navbar = () => {
         </div>
 
         {/* Menu for larger screens */}
-        <ul className={`md:flex space-x-6 ${isMenuOpen ? "block" : "hidden"} md:block`}>
+        <ul
+          className={`md:flex space-x-6 ${isMenuOpen ? "block absolute inset-0 bg-gray-800 bg-opacity-75 flex flex-col justify-center items-center" : "hidden md:block"}`}
+        >
           {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
             (item, index) => (
               <li
                 key={index}
-                className="relative cursor-pointer text-white text-lg font-semibold transition duration-300 hover:text-cyan-300"
+                className="relative cursor-pointer text-white text-lg font-semibold transition duration-300 hover:text-cyan-300 my-4"
               >
                 <span className="hover-effect">{item}</span>
               </li>
