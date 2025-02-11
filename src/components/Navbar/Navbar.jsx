@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isTransparent, setIsTransparent] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +29,18 @@ const Navbar = () => {
         {/* Logo */}
         <img src={logo} alt="Company Logo" className="h-10" />
 
+        {/* Hamburger Icon for mobile */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white text-3xl"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
         {/* Menu for larger screens */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className={`md:flex space-x-6 ${isMenuOpen ? "block" : "hidden"} md:block`}>
           {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
             (item, index) => (
               <li
