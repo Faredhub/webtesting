@@ -62,11 +62,11 @@ const Navbar = () => {
       {/* Dropdown Menu for smaller screens */}
       {isOpen && (
         <div
-          className="absolute top-0 left-0 w-full h-full bg-black/70 backdrop-blur-md flex justify-center items-center z-50"
+          className="absolute top-0 left-0 w-full h-screen bg-black/70 backdrop-blur-md flex justify-center items-center z-50"
           onClick={() => setIsOpen(false)}
         >
           <ul
-            className="text-center space-y-6 text-xl bg-gradient-to-b from-gray-900 to-gray-700 p-8 rounded-md animate-slide-down"
+            className="text-center space-y-6 text-xl bg-gradient-to-b from-gray-900 to-gray-700 p-8 rounded-md animate-slide-down overflow-y-auto max-h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
