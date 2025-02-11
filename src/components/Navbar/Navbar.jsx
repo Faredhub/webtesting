@@ -8,10 +8,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Detect scroll after 50px
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -43,10 +42,11 @@ const Navbar = () => {
             (item, index) => (
               <li
                 key={index}
-                className="cursor-pointer text-white font-bold hover:text-gray-400 transition duration-300 relative group"
+                className="relative cursor-pointer text-white font-bold group"
               >
-                {item}
-                <div className="absolute inset-0 bg-transparent border-2 border-transparent group-hover:border-cyan-400 group-hover:bg-cyan-400 group-hover:bg-opacity-30 rounded-xl transition duration-300"></div>
+                <span className="relative z-10">{item}</span>
+                {/* Curved Hover Line */}
+                <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></div>
               </li>
             )
           )}
@@ -73,9 +73,11 @@ const Navbar = () => {
               (item, index) => (
                 <li
                   key={index}
-                  className="cursor-pointer text-white font-bold hover:text-cyan-400 transition duration-300"
+                  className="relative group cursor-pointer text-white font-bold hover:text-cyan-400 transition duration-300"
                 >
-                  {item}
+                  <span className="relative z-10">{item}</span>
+                  {/* Curved Hover Line */}
+                  <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></div>
                 </li>
               )
             )}

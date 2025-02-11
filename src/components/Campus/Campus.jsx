@@ -12,13 +12,12 @@ const images = [
 ];
 
 const Campus = () => {
-  const [hoveredImage, setHoveredImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showInfo, setShowInfo] = useState(false);
   const [imageInfo, setImageInfo] = useState(null);
 
   const handleNext = () => {
-    if (currentIndex < images.length - 3) {
+    if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -41,49 +40,42 @@ const Campus = () => {
 
         {/* Image Slide Left/Right Buttons */}
         <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-50 px-4 py-2 rounded-full hover:bg-opacity-80 transition-all"
+          className="absolute top-1/2 left-2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-50 px-3 py-2 rounded-full hover:bg-opacity-80 transition-all z-10"
           onClick={handlePrev}
         >
           &#8592;
         </button>
         <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-50 px-4 py-2 rounded-full hover:bg-opacity-80 transition-all"
+          className="absolute top-1/2 right-2 transform -translate-y-1/2 text-white text-3xl bg-black bg-opacity-50 px-3 py-2 rounded-full hover:bg-opacity-80 transition-all z-10"
           onClick={handleNext}
         >
           &#8594;
         </button>
 
-        {/* Responsive Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-          {images.slice(currentIndex, currentIndex + 3).map((image, index) => (
-            <div
-              key={index}
-              className={`w-80 h-96 p-4 relative rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 ease-in-out 
-                ${hoveredImage === index ? "neon-glow-image" : "bg-white bg-opacity-5"}`}
-              onMouseEnter={() => setHoveredImage(index)}
-              onMouseLeave={() => setHoveredImage(null)}
-            >
-              {/* Hover Details Button */}
+        {/* Responsive Image Container */}
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-500"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((image, index) => (
               <div
-                className="absolute top-3 right-3 p-2 rounded-full bg-black text-white opacity-0 hover:opacity-100 transition-opacity duration-300"
-                style={{ display: hoveredImage === index ? "block" : "none" }}
-                onClick={() => handleImageInfo(image)}
+                key={index}
+                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 p-4 relative"
               >
-                <button
-                  className="flex items-center justify-center text-xl"
-                  title="View Details"
+                <div
+                  className={`w-full h-96 rounded-xl shadow-xl overflow-hidden transform transition-all duration-500 ease-in-out bg-white bg-opacity-5`}
+                  onClick={() => handleImageInfo(image)}
                 >
-                  <i className="fas fa-info-circle"></i>
-                </button>
+                  <img
+                    src={image.src}
+                    alt={`Gallery ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
               </div>
-
-              <img
-                src={image.src}
-                alt={`Gallery ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg transform transition-all duration-500 ease-in-out"
-              />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -102,38 +94,6 @@ const Campus = () => {
           </div>
         </div>
       )}
-
-      {/* Neon Glow Effect */}
-      <style jsx>{`
-        .neon-glow-image {
-          background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 10%, rgba(0, 255, 0, 0.3) 90%);
-          box-shadow: 0 0 25px rgba(0, 255, 0, 0.7), 0 0 50px rgba(0, 255, 0, 0.8);
-        }
-
-        .neon-glow-image:hover {
-          box-shadow: 0 0 30px rgba(0, 255, 0, 1), 0 0 40px rgba(0, 255, 0, 1);
-          animation: glow-animation 2s infinite alternate;
-        }
-
-        @keyframes glow-animation {
-          0% {
-            box-shadow: 0 0 25px rgba(0, 255, 0, 0.5), 0 0 50px rgba(0, 255, 0, 0.7);
-          }
-          100% {
-            box-shadow: 0 0 35px rgba(0, 255, 0, 1), 0 0 55px rgba(0, 255, 0, 1);
-          }
-        }
-
-        .fa-info-circle {
-          font-size: 24px;
-          color: #00ff00;
-          transition: transform 0.3s ease;
-        }
-
-        .fa-info-circle:hover {
-          transform: scale(1.2);
-        }
-      `}</style>
     </div>
   );
 };
