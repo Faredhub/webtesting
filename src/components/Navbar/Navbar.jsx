@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -38,24 +39,26 @@ const Navbar = () => {
 
         {/* Menu for larger screens */}
         <ul className="hidden md:flex space-x-6">
-          {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
-            (item, index) => (
-              <li
-                key={index}
-                className="relative cursor-pointer text-white font-bold group"
+          {[
+            { name: "Home", link: "hero" },
+            { name: "Program", link: "program" },
+            { name: "About Us", link: "about" },
+            { name: "Campus", link: "campus" },
+            { name: "Contact", link: "contact" },
+          ].map((item, index) => (
+            <li key={index} className="relative cursor-pointer text-white font-bold group">
+              <Link
+                to={item.link}
+                smooth={true}
+                duration={800}
+                className="cursor-pointer"
               >
-                <span className="relative z-10">{item}</span>
-                {/* Curved Hover Line */}
-                <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></div>
-              </li>
-            )
-          )}
-          {/* Contact Us Button */}
-          <li>
-            <button className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:from-cyan-600 hover:to-blue-600 transition duration-300">
-              Contact Us
-            </button>
-          </li>
+                {item.name}
+              </Link>
+              {/* Hover Underline Effect */}
+              <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></div>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -69,24 +72,29 @@ const Navbar = () => {
             className="text-center space-y-6 text-xl bg-gradient-to-b from-gray-900 to-gray-700 p-8 rounded-md animate-slide-down overflow-y-auto max-h-[80vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            {["Home", "Program", "About Us", "Campus", "Testimonials"].map(
-              (item, index) => (
-                <li
-                  key={index}
-                  className="relative group cursor-pointer text-white font-bold hover:text-cyan-400 transition duration-300"
+            {[
+              { name: "Home", link: "hero" },
+              { name: "Program", link: "program" },
+              { name: "About Us", link: "about" },
+              { name: "Campus", link: "campus" },
+              { name: "Contact", link: "contact" },
+            ].map((item, index) => (
+              <li
+                key={index}
+                className="relative group cursor-pointer text-white font-bold hover:text-cyan-400 transition duration-300"
+              >
+                <Link
+                  to={item.link}
+                  smooth={true}
+                  duration={800}
+                  onClick={() => setIsOpen(false)}
                 >
-                  <span className="relative z-10">{item}</span>
-                  {/* Curved Hover Line */}
-                  <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></div>
-                </li>
-              )
-            )}
-            {/* Contact Us Button in dropdown */}
-            <li>
-              <button className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:from-cyan-600 hover:to-blue-600 transition duration-300">
-                Contact Us
-              </button>
-            </li>
+                  {item.name}
+                </Link>
+                {/* Hover Underline Effect */}
+                <div className="absolute left-0 right-0 bottom-0 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 rounded-full"></div>
+              </li>
+            ))}
           </ul>
         </div>
       )}
