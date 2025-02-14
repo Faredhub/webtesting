@@ -94,6 +94,13 @@ const Campus = () => {
           </div>
         </div>
       )}
+
+      {/* Updated "See More Info" Button */}
+      <div className="flex justify-center mt-8">
+        <button className="px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-indigo-600 rounded-full shadow-md transform transition-all hover:scale-105 hover:shadow-lg focus:ring-2 focus:ring-indigo-400">
+          See more info Here
+        </button>
+      </div>
     </div>
   );
 };
